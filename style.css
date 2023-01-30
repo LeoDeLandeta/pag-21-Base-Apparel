@@ -1,0 +1,178 @@
+
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --josefin-sans: 'Josefin Sans', sans-serif;
+}
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Fasthand&family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Krub:wght@400;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@400;500;700&family=Lexend+Deca&family=Montserrat:wght@300;400;500;700&family=Mulish:wght@400;700&family=Open+Sans:wght@300;700&family=Oswald:wght@200;300;400&family=Outfit:wght@300;400;600&family=PT+Sans:wght@400;700&family=Poppins:wght@200;400;500;600;700&family=Red+Hat+Display:wght@500;700;900&family=Roboto+Slab:wght@400;600&family=Sansita+Swashed:wght@300&family=Source+Sans+Pro:wght@700&family=Staatliches&display=swap');
+ 
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    background-image: url('/images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-position: center center;
+    font-family: var(--josefin-sans);
+    margin: 0;
+  }
+  .container{
+    display: flex;
+    min-height: 100vh;
+  }
+  .left{
+    width: 60%;
+    padding: 0 40px;
+  }
+  .right{
+    width: 40%;
+  }
+  .bg-image{
+    background-image: url('images/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .logo{
+    margin: 60px o;
+    width: 200px;
+  }
+  .bg-movile{
+    display: none;
+  }
+  h1{
+    color: var(--Dark-Grayish-Red);
+    font-size: 60px;
+    letter-spacing: 10px;
+    line-height: 1.1;
+    transform: translateX(-100%);
+    text-transform: uppercase;
+    margin-bottom: 0;
+    animation: comeinleft .5s linear forwards;
+  }
+@keyframes comeinleft {
+  to{
+    transform: translateX(0);
+  }
+}
+
+  h1 span{
+    color: var(--Desaturated-Red);
+    font-weight: 200;
+  }
+  p{
+    color: var(--Desaturated-Red);
+    letter-spacing: 1px;
+    line-height: 26px;
+    margin: 40px 0;
+    animation: comeinright 1s linear forwards;
+    transform: translateY(-100%);
+  }
+  @keyframes comeinright {
+    to{
+      transform: translateY(0);
+    }
+  }
+  form{
+    position: relative;
+    animation: comeinright 1s linear forwards;
+    transform: translateX(-100%);
+  }
+ 
+  input{
+    background-color: transparent;
+    border: 1px solid var(--Desaturated-Red);
+    padding: 15px;
+    border-radius: 50px;
+    padding: 15px 30px;
+    width: 100%;
+    height: 55px;
+   
+  }
+  @keyframes comeinleft {
+    to{
+      transform: translateX(0);
+    }
+  }
+  input:focus{
+    outline: none;
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 1) ;
+    border-width: 2px;
+  }
+  input::placeholder{
+    color: var(--Desaturated-Red);
+  }
+  form.error input{
+    border: 2px solid var(--Dark-Grayish-Red);
+  }
+ 
+  button{
+    background-image: linear-gradient(135deg,  hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 1) ;
+    border: none;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    width: 100px;
+    height: 55px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+  button:hover{
+    opacity: 0.6;
+    
+   
+  }
+  .error-icon{
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 110px;
+    
+  }
+  form.error .error-icon{
+    display: block;
+  }
+  small{
+
+    margin-top: 15px;
+    display: none;
+    margin-left: 30px;
+    color: var(--Desaturated-Red);
+
+ }
+ 
+ /*mq*/
+ @media screen and (max-width:600px) {
+  .logo{
+    margin: 30px 0;
+    width: 100px;
+  } 
+  .bg-movile{
+        display: block;
+        width: calc(100% + 80px);
+        margin-left: -40px;
+        margin-right: -40px;
+        
+     }
+    .left{
+      width: 100%;
+    }
+    .right{
+      display: none;
+    }
+ }
+
+ @media screen and (max-width:400px){
+    .right {
+      display: none;
+    }
+    .left{
+      width: 100%;
+    }
+ }
